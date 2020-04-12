@@ -27,9 +27,9 @@ class HomeScreen extends Component {
                         <div className="container row">
                             <div className="col s4">
                                 <h3>Recent Work</h3>
-                                {data.logos.map((logo, index) => (
+                                {data.logos.sort((a,b) => b.lastUpdate.localeCompare(a.lastUpdate)).map((logo, index) => (
                                     <div key={index} className='home_logo_link'
-                                        style={{ cursor: "pointer" }}>
+                                        style={{ cursor: "pointer", whiteSpace: "pre"}}>
                                         <Link to={`/view/${logo._id}`}>{logo.text}</Link>
                                     </div>
                                 ))}
