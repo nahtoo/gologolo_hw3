@@ -21,9 +21,9 @@ class TextWorkSpace extends Component {
             }
         }
         return (
-            <div className="" overflow="auto">
-                <div className="" 
-                    style={ styles.container }>
+            <div>
+                <div
+                    style={ styles.container}>
                     {this.props.text}
                 </div>
             </div>

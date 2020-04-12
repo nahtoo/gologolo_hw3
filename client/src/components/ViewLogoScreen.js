@@ -50,28 +50,37 @@ class ViewLogoScreen extends Component {
                                     </h3>
                                 </div>
                                 <div className="panel-body">
-                                    <dl>
-                                        <dt>Text:</dt>
-                                        <dd>{data.logo.text}</dd>
-                                        <dt>Color:</dt>
-                                        <dd>{data.logo.color}</dd>
-                                        <dt>Border Color:</dt>
-                                        <dd>{data.logo.borderColor}</dd>
-                                        <dt>Background Color:</dt>
-                                        <dd>{data.logo.backgroundColor}</dd>
-                                        <dt>Font Size:</dt>
-                                        <dd>{data.logo.fontSize}</dd>
-                                        <dt>Border Radius:</dt>
-                                        <dd>{data.logo.borderRadius}</dd>
-                                        <dt>Border Width:</dt>
-                                        <dd>{data.logo.borderWidth}</dd>
-                                        <dt>Padding:</dt>
-                                        <dd>{data.logo.padding}</dd>
-                                        <dt>Margin:</dt>
-                                        <dd>{data.logo.margin}</dd>
-                                        <dt>Last Updated:</dt>
-                                        <dd>{data.logo.lastUpdate}</dd>
-                                    </dl>
+                                    <div className="row">
+                                        <dl className="col col-lg">
+                                            <dt>Text:</dt>
+                                            <dd>{data.logo.text}</dd>
+                                            <dt>Color:</dt>
+                                            <dd>{data.logo.color}</dd>
+                                            <dt>Border Color:</dt>
+                                            <dd>{data.logo.borderColor}</dd>
+                                            <dt>Background Color:</dt>
+                                            <dd>{data.logo.backgroundColor}</dd>
+                                            <dt>Font Size:</dt>
+                                            <dd>{data.logo.fontSize}</dd>
+                                            <dt>Border Radius:</dt>
+                                            <dd>{data.logo.borderRadius}</dd>
+                                            <dt>Border Width:</dt>
+                                            <dd>{data.logo.borderWidth}</dd>
+                                            <dt>Padding:</dt>
+                                            <dd>{data.logo.padding}</dd>
+                                            <dt>Margin:</dt>
+                                            <dd>{data.logo.margin}</dd>
+                                            <dt>Last Updated:</dt>
+                                            <dd>{data.logo.lastUpdate}</dd>
+                                        </dl>
+                                        <div className="col col-lg"  style={{height: "500px", width: "750px", overflow: "auto"}}>
+                                                <TextWorkSpace color={data.logo.color} fontSize={data.logo.fontSize}
+                                                    borderWidth={data.logo.borderWidth} borderRadius={data.logo.borderRadius}
+                                                    borderColor={data.logo.borderColor} backgroundColor={data.logo.backgroundColor}
+                                                    padding={data.logo.padding} margin={data.logo.margin} text={data.logo.text}>
+                                                </TextWorkSpace>
+                                        </div>
+                                    </div>
                                     <Mutation mutation={DELETE_LOGO} key={data.logo._id} onCompleted={() => this.props.history.push('/')}>
                                         {(removeLogo, { loading, error }) => (
                                             <div>
