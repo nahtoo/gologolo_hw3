@@ -86,33 +86,33 @@ class CreateLogoScreen extends Component {
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="fontSize">Font Size:</label>
-                                        <input type="number" className="form-control" name="fontSize" ref={node => {
+                                        <input type="range" className="form-control-range" name="fontSize" ref={node => {
                                             fontSize = node;
-                                        }} placeholder="Font Size" />
+                                        }}/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="borderRadius">Border Radius:</label>
-                                        <input type="number" className="form-control" name="borderRadius" ref={node => {
+                                        <input type="range" className="form-control-range" name="borderRadius" ref={node => {
                                             borderRadius = node;
-                                        }} placeholder="Border Radius" />
+                                        }}/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="borderWidth">Border Width:</label>
-                                        <input type="number" className="form-control" name="borderWidth" ref={node => {
+                                        <input type="range" className="form-control-range" name="borderWidth" ref={node => {
                                             borderWidth = node;
-                                        }} placeholder="Border Width" />
+                                        }}/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="padding">Padding:</label>
-                                        <input type="number" className="form-control" name="padding" ref={node => {
+                                        <input type="range" className="form-control-range" name="padding" ref={node => {
                                             padding = node;
-                                        }} placeholder="Padding" />
+                                        }}/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="margin">Margin:</label>
-                                        <input type="number" className="form-control" name="margin" ref={node => {
+                                        <input type="range" className="form-control-range" name="margin" ref={node => {
                                             margin = node;
-                                        }} placeholder="Margin" />
+                                        }}/>
                                     </div>
                                     <button type="submit" className="btn btn-success">Submit</button>
                                 </form>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import gql from 'graphql-tag';
 import { Query, Mutation } from 'react-apollo';
+import TextWorkSpace from './TextWorkSpace.js';
 
 const GET_LOGO = gql`
     query logo($logoId: String) {
@@ -10,7 +11,13 @@ const GET_LOGO = gql`
             _id
             text
             color
+            backgroundColor
+            borderColor
             fontSize
+            borderWidth
+            borderRadius
+            padding
+            margin
             lastUpdate
         }
     }
@@ -48,8 +55,20 @@ class ViewLogoScreen extends Component {
                                         <dd>{data.logo.text}</dd>
                                         <dt>Color:</dt>
                                         <dd>{data.logo.color}</dd>
+                                        <dt>Border Color:</dt>
+                                        <dd>{data.logo.borderColor}</dd>
+                                        <dt>Background Color:</dt>
+                                        <dd>{data.logo.backgroundColor}</dd>
                                         <dt>Font Size:</dt>
                                         <dd>{data.logo.fontSize}</dd>
+                                        <dt>Border Radius:</dt>
+                                        <dd>{data.logo.borderRadius}</dd>
+                                        <dt>Border Width:</dt>
+                                        <dd>{data.logo.borderWidth}</dd>
+                                        <dt>Padding:</dt>
+                                        <dd>{data.logo.padding}</dd>
+                                        <dt>Margin:</dt>
+                                        <dd>{data.logo.margin}</dd>
                                         <dt>Last Updated:</dt>
                                         <dd>{data.logo.lastUpdate}</dd>
                                     </dl>
