@@ -97,14 +97,12 @@ class CreateLogoScreen extends Component {
             <Mutation mutation={ADD_LOGO} onCompleted={() => this.props.history.push('/')}>
                 {(addLogo, { loading, error }) => (
                     <div className="container row">
-                        <div className="panel panel-default">
-                            <div className="panel-heading">
-                                <h4><Link to="/">Home</Link></h4>
-                                <h3 className="panel-title">
-                                    Create Logo
-                            </h3>
+                        <div className="card col bg-secondary text-white">
+                            <div className="card-header">
+                                <h4><Link to="/"><button type="button" className="btn btn-primary btn-lg btn-block">Home</button></Link></h4>
+                                <h3>Create Logo</h3>
                             </div>
-                            <div className="panel-body col col-lg">
+                            <div className="card-body">
                                 <form onSubmit={e => {
                                     e.preventDefault();
                                     addLogo({ variables: { text: text.value, color: color.value, borderColor: borderColor.value, backgroundColor: backgroundColor.value, 
@@ -148,31 +146,31 @@ class CreateLogoScreen extends Component {
                                         <label htmlFor="fontSize">Font Size:</label>
                                         <input type="range" className="form-control-range" name="fontSize" ref={node => {
                                             fontSize = node;
-                                        }} defaultValue={10} onChange={this.handleFontSizeChange}/>
+                                        }} defaultValue={10} onChange={this.handleFontSizeChange} min="2" max="144"/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="borderRadius">Border Radius:</label>
                                         <input type="range" className="form-control-range" name="borderRadius" ref={node => {
                                             borderRadius = node;
-                                        }} defaultValue={1} onChange={this.handleBorderRadiusChange}/>
+                                        }} defaultValue={1} onChange={this.handleBorderRadiusChange} min="0" max="100"/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="borderWidth">Border Width:</label>
                                         <input type="range" className="form-control-range" name="borderWidth" ref={node => {
                                             borderWidth = node;
-                                        }} defaultValue={1} onChange={this.handleBorderWidthChange}/>
+                                        }} defaultValue={1} onChange={this.handleBorderWidthChange} min="0" max="100"/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="padding">Padding:</label>
                                         <input type="range" className="form-control-range" name="padding" ref={node => {
                                             padding = node;
-                                        }} defaultValue={1} onChange={this.handlePaddingChange}/>
+                                        }} defaultValue={1} onChange={this.handlePaddingChange} min="0" max="100"/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="margin">Margin:</label>
                                         <input type="range" className="form-control-range" name="margin" ref={node => {
                                             margin = node;
-                                        }} defaultValue={1} onChange={this.handleMarginChange}/>
+                                        }} defaultValue={1} onChange={this.handleMarginChange} min="0" max="100"/>
                                     </div>
                                     <button type="submit" className="btn btn-success">Submit</button>
                                 </form>
@@ -180,7 +178,7 @@ class CreateLogoScreen extends Component {
                                 {error && <p>Error :( Please try again</p>}
                             </div>
                         </div>
-                        <div className="col col-lg"  style={{height: "500px", width: "750px", overflow: "auto"}}>
+                        <div className="col col-lg"  style={{height: "500px", width: "1000px", overflow: "auto"}}>
                             <TextWorkSpace color={this.state.color} fontSize={this.state.fontSize}
                                         borderWidth={this.state.borderWidth} borderRadius={this.state.borderRadius}
                                         borderColor={this.state.borderColor} backgroundColor={this.state.backgroundColor}

@@ -41,17 +41,15 @@ class ViewLogoScreen extends Component {
                     if (error) return `Error! ${error.message}`;
 
                     return (
-                        <div className="container">
-                            <div className="panel panel-default">
-                                <div className="panel-heading">
-                                    <h4><Link to="/">Home</Link></h4>
-                                    <h3 className="panel-title">
-                                        View Logo
-                                    </h3>
+                        <div className="container row">
+                            <div className="card col bg-secondary text-white">
+                                <div className="card-header">
+                                    <h4><Link to="/"><button type="button" className="btn btn-primary btn-lg btn-block">Home</button></Link></h4>
+                                    <h3 className="font-weight-bold">View Logo</h3>
                                 </div>
-                                <div className="panel-body">
-                                    <div className="row">
-                                        <dl className="col col-lg">
+                                <div className="card-body">
+                                    <div>
+                                        <dl>
                                             <dt>Text:</dt>
                                             <dd>{data.logo.text}</dd>
                                             <dt>Color:</dt>
@@ -73,13 +71,6 @@ class ViewLogoScreen extends Component {
                                             <dt>Last Updated:</dt>
                                             <dd>{data.logo.lastUpdate}</dd>
                                         </dl>
-                                        <div className="col col-lg"  style={{height: "500px", width: "750px", overflow: "auto"}}>
-                                                <TextWorkSpace color={data.logo.color} fontSize={data.logo.fontSize}
-                                                    borderWidth={data.logo.borderWidth} borderRadius={data.logo.borderRadius}
-                                                    borderColor={data.logo.borderColor} backgroundColor={data.logo.backgroundColor}
-                                                    padding={data.logo.padding} margin={data.logo.margin} text={data.logo.text}>
-                                                </TextWorkSpace>
-                                        </div>
                                     </div>
                                     <Mutation mutation={DELETE_LOGO} key={data.logo._id} onCompleted={() => this.props.history.push('/')}>
                                         {(removeLogo, { loading, error }) => (
@@ -98,6 +89,13 @@ class ViewLogoScreen extends Component {
                                         )}
                                     </Mutation>
                                 </div>
+                            </div>
+                            <div className="col col-lg"  style={{height: "750px", width: "750px", overflow: "auto"}}>
+                                    <TextWorkSpace color={data.logo.color} fontSize={data.logo.fontSize}
+                                        borderWidth={data.logo.borderWidth} borderRadius={data.logo.borderRadius}
+                                        borderColor={data.logo.borderColor} backgroundColor={data.logo.backgroundColor}
+                                        padding={data.logo.padding} margin={data.logo.margin} text={data.logo.text}>
+                                    </TextWorkSpace>
                             </div>
                         </div>
                     );
