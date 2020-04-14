@@ -16,7 +16,7 @@ mutation {
 
 ### Deleting a Logo
 
-```javascript
+```graphql
 mutation {
   removeLogo(id: "5e8e7f242c3d9614d53807c3") {
     _id
@@ -26,7 +26,7 @@ mutation {
 ```
 
 ### Updating a Logo
-```javascript
+```graphql
 mutation {
   updateLogo(id: "5e9110230ffbfc26be3da7c9", text: "test2", color: "black",
   backgroundColor: "black", borderColor: "black", borderWidth: 3, borderRadius: 3,
@@ -40,7 +40,7 @@ mutation {
 
 ### Querying for All Logos
 
-```javascript
+```graphql
 {
   logos {
     _id
@@ -60,7 +60,7 @@ mutation {
 
 ### Querying for Specific Logo
 
-```javascript
+```graphql
 {
   logo(id: "5e9110230ffbfc26be3da7c9") {
     text
